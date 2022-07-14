@@ -24,16 +24,11 @@ function fetchlist() {
 
 function handelDisplayList(obj) {
 
-
     l = obj.results
+
     l.forEach(element => {
         
-        console.log(element.image_url)
-        console.log(element.title)
-        console.log(element.episodes)
-        
-        console.log(element.airing)
-        console.log(element.synopsis)
+        maketile(element)
         
     });
 
@@ -42,11 +37,11 @@ function handelDisplayList(obj) {
 function maketile(element) {
 
     const div = document.createElement("div")
-    div.id = `Anime # ${list.id}`
+    div.id = `Anime # ${element.id}`
     div.className = 'anime-list'
 
     const bg = document.createElement('img')
-    bg = element.image_url
+    bg.innerContent = element.image_url
 
     const  title = document.createElement("h2")
     title.textContent = element.title
@@ -59,10 +54,10 @@ function maketile(element) {
     Synopsis: ${element.synopsis} `
 
     const button = document.createElement("button")
-    button.id = `Anime # ${list.id} - like`
+    button.id = `Anime # ${element.id} - like`
     button.className = "anime-likes"
     button.textContent =  "❤"
 
     div.append(bg,title,span,button)
-    animeUl().appendchild("div")
+    w.append(div)
 }
