@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/reset.css">
-        <script src="js/index.js"></script>
+        
         <title>My Anime Diary</title>
     </head>
 
@@ -20,15 +20,17 @@
         <div class="image" id="backGround"></div>
 
 
-        <div class=select id="menuSelect">
-            <button id="input">Create</button>
-            <button id="watched">Watched List</button>
-            <button id="favsList">Favorites</button>
+        <div class=selectMenu id="menuSelect">
+            <button class=select id="input">Create</button>
+            <button class=select id="watched">Watched List</button>
+            <button class=select id="favsList">Favorites</button>
         </div>
 
         <div class="form" id="display">
-        <div class="hide" id="create"></div>
-        <div class="hide" id="watched"></div>
+        <div class="hidden" id="create">
+            <input type="text">
+        </div>
+        <div class="hide" id="watchedlist"></div>
         <div class="hide" id="favs"></div>
         </div>
 
@@ -38,6 +40,6 @@
 
 
     </body>
-
+    <script src="js/index.js"></script>
 </html>
 
