@@ -91,7 +91,7 @@ function makeTile(element) {
     const img = document.createElement('img')
     img.src = element.image_url
 
-    const  title = document.createElement("h1")
+    const  title = document.createElement("h2")
     title.textContent = element.title
 
     const ul = document.createElement("ul")
@@ -104,7 +104,7 @@ function makeTile(element) {
     const button = document.createElement("button")
     button.id = `Anime # ${element.id} - like`
     button.className = "anime-likes"
-    button.textContent =  "❤"
+    button.textContent =  "♡"
 
     div.append(img,title,ul,button)
     w.append(div)
