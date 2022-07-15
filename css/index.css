@@ -1,62 +1,71 @@
-     .section {
+     .section,.brand {
         position: relative;
         text-align: center;
       }
 
 
     .selectMenu {
-
+         
     text-align: center;
+    margin-bottom: 50px;
 
 }
 
     .input {
+
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-    .watched {
-
-    position: relative;
    
-  }
+}
 
     .details {
 
     text-align: left;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 18px;
     color: black;
 
   }
-
-
-.anime-list {
-    background-color: rgb(122, 122, 122);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-}
 
 .anime-list:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
 
-  #wList {
-    padding: 2px 16px;
-  }
-
   .anime-likes {
     border: none;
     outline: 0;
-    display: inline-block;
     padding: 8px;
     color: white;
     background-color: #000;
     text-align: center;
     cursor: pointer;
     width: 100%;
+    display: block;
+    margin-bottom: 20px;
     font-size: 18px;
+    
+  }
+
+  #wList {
+
+    width: 50%;
+    padding: 10px;
+    background-color: rgb(122, 122, 122);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-height: auto;
+    margin: auto;
+    text-align: center;
+
+  }
+
+  h1, .brand {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 70px;
+    font-weight: 600; 
+    background-image: linear-gradient(to left, #553c9a, #b393d3);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
   }

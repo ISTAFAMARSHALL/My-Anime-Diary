@@ -1,6 +1,6 @@
 const m = document.querySelectorAll(".select");
 const b = document.querySelector("#messageBanner")
-const w = document.querySelector("#watchedlist")
+const w = document.querySelector("#wList")
 const c = document.querySelector("#create")
 const f = document.querySelector("#favs")
 
