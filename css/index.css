@@ -25,12 +25,15 @@
     .details {
 
     text-align: left;
-    font-size: medium;
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
 
   }
 
 
 .anime-list {
+    background-color: rgb(122, 122, 122);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     margin: auto;
@@ -43,4 +46,17 @@
 
   #wList {
     padding: 2px 16px;
+  }
+
+  .anime-likes {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
   }

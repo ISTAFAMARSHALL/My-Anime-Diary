@@ -99,7 +99,8 @@ function makeTile(element) {
     ul.innerText = `
     Episodes: ${element.episodes}
     Airing: ${element.airing}
-    Synopsis: ${element.synopsis}`
+    Synopsis: 
+    ${element.synopsis}`
 
     const button = document.createElement("button")
     button.id = `Anime # ${element.id} - like`
