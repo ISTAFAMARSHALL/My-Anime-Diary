@@ -69,3 +69,18 @@
     background-clip: text;
     -webkit-background-clip: text;
   }
+
+ 
+    body {
+
+        background: #0e0e0e;
+        font-family: Poppins,Arial;
+        color: #aaa;
+        font-size: 14px; 
+        font-weight: auto;
+        padding: 0;
+        margin: 0;
+        -webkit-text-size-adjust: none;
+    }
+
+ 
