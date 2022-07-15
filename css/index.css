@@ -25,6 +25,7 @@
     text-decoration: none;
     font-size: 18px;
     color: black;
+    margin: 10px;
 
   }
 
@@ -56,6 +57,7 @@
     max-height: auto;
     margin: auto;
     text-align: center;
+    content: "";
 
   }
 
@@ -75,7 +77,7 @@
 
         background: #0e0e0e;
         font-family: Poppins,Arial;
-        color: #aaa;
+        /* color: #aaa; */
         font-size: 14px; 
         font-weight: auto;
         padding: 0;
@@ -83,4 +85,9 @@
         -webkit-text-size-adjust: none;
     }
 
- 
+   h2 {
+
+   font-size: xx-large;
+   margin-bottom: auto;
+
+    }
