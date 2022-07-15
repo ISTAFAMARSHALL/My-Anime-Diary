@@ -6,13 +6,50 @@
 
 .selectMenu {
 
-  
-    align-items: center;
+    text-align: center;
 
 }
 
-  
-.form {
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.watched {
+    position: relative;
+   
+  }
+
+
+
+.anime-list {
+
+    /* display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 500px;
+    padding: 200px;
+    box-sizing: border-box;
+    border: 10px solid rgb(63, 28, 167);
+    
+    justify-self: center;
+    align-self: center;
+    place-self: center;
+    /* justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+    place-self: center; */
+
+}
+/* .watched {
+
+    grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+
+}  */
+/* .form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,7 +61,7 @@
 
     position: relative;
     
-  }
+  } */
 
 /* body {
     background: #0e0e0e;
