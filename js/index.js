@@ -1,9 +1,9 @@
 const m = document.querySelectorAll(".select");
+const b = document.querySelector("#messageBanner")
 const w = document.querySelector("#watchedlist")
 const c = document.querySelector("#create")
 const f = document.querySelector("#favs")
-console.log(m)
-console.log(w)
+
 
 document.addEventListener("DOMContentLoaded",handleload)
 
@@ -44,15 +44,7 @@ for (const item of m) {
         
     }) 
 
-}
-
-
-// const handleSelector = () => {
-
-    
-
-// }
-
+};
 
 
 function handleload() {
@@ -61,12 +53,13 @@ function handleload() {
 
 }
 
+
 function fetchlist() {
     
     fetch("https://api.jikan.moe/v3/search/anime?q=naruto")
     .then(resp => resp.json())
     .then(list => handleList(list))
-    .catch()
+    .catch(() => errorDisplay())
 
 }
 
@@ -80,6 +73,12 @@ function handleList(obj) {
         makeTile(element)
         
     });
+
+}
+
+function errorDisplay() {
+
+    b.innerText = 'load error'
 
 }
 
