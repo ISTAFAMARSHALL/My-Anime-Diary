@@ -19,15 +19,11 @@ for (const item of m) {
             w.style.display = ''
             c.style.display = 'none'
             f.style.display = 'none'
-            console.log(item)
-            console.log(e.target)
 
         } else if (e.target == document.querySelector("#favsList.select")) {
 
             w.style.display = 'none'
             c.style.display = 'none'
-            console.log(item)
-            console.log(e.target)
 
         } else if (e.target == document.querySelector("#input.select")) {
 
@@ -103,11 +99,15 @@ function makeTile(element) {
     ${element.synopsis}`
 
     const button = document.createElement("button")
+    
     button.id = `Anime # ${element.id} - like`
     button.className = "anime-likes"
     button.textContent =  "♡"
+    button.addEventListener('click', () => button.textContent = '♥')
 
     div.append(img,title,ul,button)
     w.append(div)
 }
+
+
 
