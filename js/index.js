@@ -103,11 +103,52 @@ function makeTile(element) {
     button.id = `Anime # ${element.id} - like`
     button.className = "anime-likes"
     button.textContent =  "♡"
-    button.addEventListener('click', () => button.textContent = '♥')
-
     div.append(img,title,ul,button)
     w.append(div)
+    button.addEventListener('click', (e) => {
+        button.textContent = '♥';
+        makeFaveTile(e)
+    })
+
+
+
 }
 
+fl = document.querySelectorAll('♥')
+
+console.log(fl)
 
 
+
+function makeFaveTile(e) {
+
+    console.log(e)
+    console.log(this)
+
+    const div = document.createElement("div")
+    div.id = `Anime # ${element.id}`
+    div.className = 'anime-list'
+
+    const img = document.createElement('img')
+    img.src = element.image_url
+
+    const  title = document.createElement("h2")
+    title.textContent = element.title
+
+    const ul = document.createElement("ul")
+    ul.className = "details"
+    ul.innerText = `
+    Episodes: ${element.episodes}
+    Airing: ${element.airing}
+    Synopsis: 
+    ${element.synopsis}`
+
+    const button = document.createElement("button")
+    
+    button.id = `Anime # ${element.id} - like`
+    button.className = "anime-delete"
+    button.textContent =  "Remove"
+    div.append(img,title,ul,button)
+    f.append(div)
+
+}
