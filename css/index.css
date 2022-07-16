@@ -6,6 +6,7 @@
 
     .selectMenu {
          
+    font-size: xx-large;
     text-align: center;
     margin-bottom: 50px;
 
@@ -16,6 +17,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 50px;
    
 }
 
@@ -50,9 +52,9 @@
 
   #wList {
 
-    width: 50%;
+    width: 45%;
     padding: 10px;
-    background-color: rgb(122, 122, 122);
+    background-color: rgb(216, 216, 216);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-height: auto;
     margin: auto;
@@ -62,14 +64,29 @@
   }
 
   h1, .brand {
+
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
     font-size: 70px;
     font-weight: 600; 
     background-image: linear-gradient(to left, #553c9a, #b393d3);
-    color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
+  }
+
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
   }
 
  
@@ -91,3 +108,29 @@
    margin-bottom: auto;
 
     }
+
+    img {
+
+        margin-top: 30px;
+        margin-bottom: 10px;
+
+    }
+
+    .select {
+        background-color: #ddd;
+        border: none;
+        color: black;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 16px;
+      }
+
+      #submit {
+
+        width: 178px;
+
+      }
