@@ -12,45 +12,55 @@
 
     
     <body>
-        <div class="hide" id="messageBanner"></div>
-        <div class="section" id="title">
+
+        <div id="bannerContainer">
+            <div id="errorBanner"></div>
+        </div>
+
+        <div id="headerContainer">
             <h1>My Anime Diary</h1>
         </div>
 
-        <div class="image" id="backGround"></div>
-
-
-        <div class=selectMenu id="menuSelect">
-            <button class=select id="input">Create</button>
-            <button class=select id="watched">Watched List</button>
-            <button class=select id="favsList">Favorites</button>
+        <div id="imgContainer">
+            <div class="image"></div>
         </div>
 
-        <div class="form" id="display">
-        <div class="input" id="create">
+        <div id="menuContainer">
+            <button class=selectMenu id="input">New Entry</button>
+            <button class=selectMenu id="watched">Watched List</button>
+            <button class=selectMenu id="favsList">Favorites</button>
+        </div>
 
+        <div id="displayContainer">
+
+            <form id="formContainer">
                 <input type="text" placeholder="Image"/>
                 <input type="text" placeholder="Title"/>
                 <input type="text" placeholder="Episodes"/>
                 <input type="text" placeholder="Airing"/>
                 <input type="text" placeholder="Synopsis"/>
                 <button class=text id="submit">Submit</button>
+            </form>
+
+
+            <div id="wacthedContainer">
+
+            </div>
+
+
+
+            <div id="favsContainer">
+
+            </div>
+
 
         </div>
 
-        <div class="container-1" id="watchedlist">
-            <ul id="wList"></ul>
+        <div id="footerContainer">
+            <footer id="footer">
+                <small>&copy; 2022 <strong>My Anime Diary</strong></small> 
+            </footer>
         </div>
-
-        <div class="hide" id="favs">
-            <ul id="flist"></ul>
-        </div>
-        </div>
-
-        <footer class="brand" id="foot">
-            <small>&copy; 2022 <strong>My Anime Diary</strong></small> 
-        </footer>
-
 
     </body>
     <script src="js/index.js"></script>

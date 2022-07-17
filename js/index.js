@@ -1,40 +1,42 @@
-const m = document.querySelectorAll(".select");
-const b = document.querySelector("#messageBanner")
-const w = document.querySelector("#wList")
-const c = document.querySelector("#create")
-const f = document.querySelector("#favs")
+const m = document.querySelectorAll(".selectMenu");
+const b = document.querySelector("#errorBanner")
+const w = document.querySelector("#wacthedContainer")
+const c = document.querySelector("#formContainer")
+const f = document.querySelector("#favsContainer")
 
 
 document.addEventListener("DOMContentLoaded",handleload)
 
 for (const item of m) {
 
-
+    
     w.style.display = 'none'
+    f.style.display = 'none'
 
     item.addEventListener('click', e => {
 
-        if (e.target == document.querySelector("#watched.select")) {
+        if (e.target == document.querySelector("#watched.selectMenu")) {
 
             w.style.display = ''
             c.style.display = 'none'
             f.style.display = 'none'
 
-        } else if (e.target == document.querySelector("#favsList.select")) {
+        } else if (e.target == document.querySelector("#favsList.selectMenu")) {
 
             w.style.display = 'none'
             c.style.display = 'none'
+            f.style.display = ''
 
-        } else if (e.target == document.querySelector("#input.select")) {
+        } else if (e.target == document.querySelector("#input.selectMenu")) {
 
             c.style.display = ''
             w.style.display = 'none'
             f.style.display = 'none'
 
-        } else {
+        // } else {
 
-            w.style.display = 'none'
-            f.style.display = 'none'
+        //     w.style.display = 'none'
+        //     f.style.display = 'none'
 
         }
         
@@ -79,9 +81,9 @@ function errorDisplay() {
 }
 
 function makeTile(element) {
-
+   
     const div = document.createElement("div")
-    div.id = `Anime # ${element.id}`
+    div.id = element.mal_id
     div.className = 'anime-list'
 
     const img = document.createElement('img')
@@ -92,63 +94,35 @@ function makeTile(element) {
 
     const ul = document.createElement("ul")
     ul.className = "details"
-    ul.innerText = `
-    Episodes: ${element.episodes}
+    ul.innerText = `Episodes: ${element.episodes}
+
     Airing: ${element.airing}
+    
     Synopsis: 
     ${element.synopsis}`
 
     const button = document.createElement("button")
     
-    button.id = `Anime # ${element.id} - like`
+    button.id = 'heart'
     button.className = "anime-likes"
     button.textContent =  "♡"
     div.append(img,title,ul,button)
     w.append(div)
     button.addEventListener('click', (e) => {
-        button.textContent = '♥';
-        makeFaveTile(e)
-    })
+        button.textContent = '♥';      
+        console.log(e)
+        console.log(e.target) 
+        console.log(e.parenElement)
+        const n =w.cloneNode(true)
+        f.append(n)
+        handleFaves(e.target)
 
-
-
+    });
 }
 
-fl = document.querySelectorAll('♥')
 
-console.log(fl)
+function handleFaves(obj) {
 
-
-
-function makeFaveTile(e) {
-
-    console.log(e)
-    console.log(this)
-
-    const div = document.createElement("div")
-    div.id = `Anime # ${element.id}`
-    div.className = 'anime-list'
-
-    const img = document.createElement('img')
-    img.src = element.image_url
-
-    const  title = document.createElement("h2")
-    title.textContent = element.title
-
-    const ul = document.createElement("ul")
-    ul.className = "details"
-    ul.innerText = `
-    Episodes: ${element.episodes}
-    Airing: ${element.airing}
-    Synopsis: 
-    ${element.synopsis}`
-
-    const button = document.createElement("button")
-    
-    button.id = `Anime # ${element.id} - like`
-    button.className = "anime-delete"
-    button.textContent =  "Remove"
-    div.append(img,title,ul,button)
-    f.append(div)
+    console.log(obj)
 
 }
