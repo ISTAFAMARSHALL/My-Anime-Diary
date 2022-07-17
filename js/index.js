@@ -110,11 +110,6 @@ function makeTile(element) {
     w.append(div)
     button.addEventListener('click', (e) => {
         button.textContent = '♥';      
-        console.log(e)
-        console.log(e.target) 
-        console.log(e.parenElement)
-        const n =w.cloneNode(true)
-        f.append(n)
         handleFaves(e.target)
 
     });
@@ -123,6 +118,30 @@ function makeTile(element) {
 
 function handleFaves(obj) {
 
+    
+    const nobj = obj.parentNode.cloneNode(true)
+    const button = document.createElement("button")
+    
+    button.id = 'delete'
+    button.className = "remove-like"
+    button.textContent =  "Remove from Favorites"
+    f.append(nobj)
+    button.addEventListener('click', (e) => {
+        button.textContent = '♡'; 
+        deleteFaves(e.target)
+
+    });
+
+}
+
+function deleteFaves(obj) {
+
+    
     console.log(obj)
+    const nobj = obj.parentNode.cloneNode(true)
+    console.log(nobj)
+
+    // f.remove(nobj)
+
 
 }
