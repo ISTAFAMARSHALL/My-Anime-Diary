@@ -62,7 +62,7 @@ input {
 }
 
 #submit {
-  width: 170px;
+  width: 180px;
 }
 
 #wacthedContainer, #favsContainer {
@@ -98,6 +98,7 @@ input {
     font-size: 18px;
     color: black;
     margin: 10px;
+    border: #000;
   }
 
 .anime-list:hover {
@@ -112,7 +113,7 @@ input {
     margin: 0;
     -webkit-text-size-adjust: none;}
 
-    #delete {
+    #favRemove {
       color: white;
       background-color: #000;
       font-size: 18px;

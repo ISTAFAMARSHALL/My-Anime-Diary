@@ -3,13 +3,15 @@ const b = document.querySelector("#errorBanner")
 const w = document.querySelector("#wacthedContainer")
 const c = document.querySelector("#formContainer")
 const f = document.querySelector("#favsContainer")
+const form = document.querySelector("#formContainer")
 
 
 document.addEventListener("DOMContentLoaded",handleload)
 
+
 for (const item of m) {
 
-    
+
     w.style.display = 'none'
     f.style.display = 'none'
 
@@ -31,12 +33,7 @@ for (const item of m) {
 
             c.style.display = ''
             w.style.display = 'none'
-            f.style.display = 'none'
-
-        // } else {
-
-        //     w.style.display = 'none'
-        //     f.style.display = 'none'
+            f.style.display = 'none';
 
         }
         
@@ -61,6 +58,32 @@ function fetchlist() {
 
 }
 
+form.addEventListener("submit", addEntry)
+
+function addEntry(obj) {
+
+    obj.preventDefault()
+
+    const image = obj.srcElement[0]
+    const t = obj.srcElement[1]
+    const e = obj.srcElement[2]
+    const a = obj.srcElement[3]
+    const s = obj.srcElement[4]
+
+        
+    const newElement = {
+
+        mal_id: 0 ,
+        image_url: image.value,
+        title: t.value,
+        episodes: e.value,
+        airing: a.value,
+        synopsis: s.value,
+    }
+
+    return makeTile(newElement)
+
+}
 
 function handleList(obj) {
 
@@ -81,9 +104,10 @@ function errorDisplay() {
 }
 
 function makeTile(element) {
-   
+    
+    const container = document.createElement("div")
     const div = document.createElement("div")
-    div.id = element.mal_id
+    container.id = element.mal_id
     div.className = 'anime-list'
 
     const img = document.createElement('img')
@@ -107,9 +131,15 @@ function makeTile(element) {
     button.className = "anime-likes"
     button.textContent =  "♡"
     div.append(img,title,ul,button)
-    w.append(div)
+    container.append(div)
+    w.append(container)
+
+
     button.addEventListener('click', (e) => {
-        button.textContent = '♥';      
+        button.textContent = '♥';
+        console.log(button)
+        console.log(e.target)
+        button.disabled = true;      
         handleFaves(e.target)
 
     });
@@ -118,30 +148,28 @@ function makeTile(element) {
 
 function handleFaves(obj) {
 
+    const container = document.createElement("div")
+    const nobj = obj.parentElement.cloneNode(true);
+    const btn = document.createElement("button")
     
-    const nobj = obj.parentNode.cloneNode(true)
-    const button = document.createElement("button")
-    
-    button.id = 'delete'
-    button.className = "remove-like"
-    button.textContent =  "Remove from Favorites"
-    f.append(nobj)
-    button.addEventListener('click', (e) => {
-        button.textContent = '♡'; 
+    btn.id = 'favRemove'
+    btn.textContent =  "Remove from Favorites"
+
+    container.append(nobj,btn);
+    f.append(container);
+
+    btn.addEventListener('click', (e) => {
+        obj.textContent = '♡';
+        obj.disabled = false;   
         deleteFaves(e.target)
 
     });
 
-}
+};
+
 
 function deleteFaves(obj) {
 
-    
-    console.log(obj)
-    const nobj = obj.parentNode.cloneNode(true)
-    console.log(nobj)
-
-    // f.remove(nobj)
-
+    obj.parentNode.remove()    
 
 }
