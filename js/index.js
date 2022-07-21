@@ -63,6 +63,9 @@ form.addEventListener("submit", addEntry)
 function addEntry(obj) {
 
     obj.preventDefault()
+    
+    const r = document.querySelectorAll("input")
+    r.forEach((e) => e.value = "")
 
     const image = obj.srcElement[0]
     const t = obj.srcElement[1]
